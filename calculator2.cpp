@@ -3,14 +3,33 @@
 #include<iostream>
 using namespace std;
 
-int a,b;
-
+int a,b, ch, x, y, i = 0;
+double value=0;
 void Inputs(int &a,int &b){
-	cout << "Enter number a: ";
-	cin >> a;
-	cout << "Enter number b: " ;
-	cin >> b;
-} 
+		if (ch == 5){
+		cout << "Enter base number: ";
+		cin >> a;
+		cout << "Enter power: " ;
+		cin >> b;
+		} else {
+			cout << "Enter number a: ";
+			cin >> a;
+			cout << "Enter number b: " ;
+			cin >> b;
+		}
+		
+}
+
+// function for calculating power.
+			
+int Power(int &a, int &b){
+	while(i < b){
+		value = a*value;
+		i++ ;
+	
+	}
+	return value;
+}
 
 int main (){
 
@@ -30,8 +49,6 @@ int main (){
 
 // switch case used to execute selected operation only.
 
-	
-	int ch;
 	bool run = true;
 
 	// while loop to provide option for next operation input.
@@ -66,10 +83,11 @@ int main (){
 					break;
 					
 				case 5:
-					Inputs(a, b);
-					cout << "The Power of a raised to the power b is: " << endl;
-					cout << a+b << endl;
-					break;
+					Inputs(a, b)
+					Power(a, b);
+					cout << "The value of base raised to power is: " << endl;
+					cout << value << endl;
+					
 				
 				case 6:
 					Inputs(a, b);
